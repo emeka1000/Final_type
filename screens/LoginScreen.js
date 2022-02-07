@@ -8,7 +8,6 @@ import {
   ImageBackground,
 } from "react-native";
 import { TouchableOpacity, View } from "react-native";
-import { withNavigation } from "react-navigation";
 
 const image = {
   uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiHVbM0oG57TC2IiI3nZj866K33lJG736_jszKr964SBoF6gNBfpV8omUBKUo5a7KTG1o&usqp=CAU",
@@ -64,7 +63,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     overflow: "visible",
-    marginTop: 130,
+    marginTop: 190,
     flex: 1,
     height: 200,
     margin: 12,

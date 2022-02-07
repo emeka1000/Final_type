@@ -28,9 +28,9 @@ const HomepageScreen = (props) => {
       <View style={styles.content}>
         <AddTask submitHandler={submitHandler} />
         <Button
-          title="Back"
+          title="Sign out"
           onPress={() => {
-            props.navigation.goBack();
+            props.navigation.navigate("LogIn");
           }}
           style={styles.buttonstyle}
         />

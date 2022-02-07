@@ -11,15 +11,23 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useState } from "react";
+import * as authActions from "../action/auth";
 
 const image = {
   uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiHVbM0oG57TC2IiI3nZj866K33lJG736_jszKr964SBoF6gNBfpV8omUBKUo5a7KTG1o&usqp=CAU",
 };
 
 const SignInScreen = (props) => {
+  // const dispatch = useDispatch();
+
+  const signupHandler = () => {
+    dispatch(
+      authActions.signup(useState.setEmail.email, useState.setPassword.password)
+    );
+  };
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPass, setConfirmPass] = useState("");
 
   return (
     <ImageBackground source={image} resizeMode="cover" style={styles.image}>
@@ -35,20 +43,17 @@ const SignInScreen = (props) => {
             required
           />
           <TextInput
+            id="password"
+            label="password"
+            keyboardType="default"
             placeholder="Enter Password"
             placeholderTextColor="#ffffff"
             value={password}
             onChangeText={(text) => setPassword(text)}
             style={styles.input}
             secureTextEntry
-          />
-          <TextInput
-            placeholder="Confirm Password"
-            placeholderTextColor="#ffffff"
-            value={confirmPass}
-            onChangeText={(text) => setConfirmPass(text)}
-            style={styles.input}
-            secureTextEntry
+            required
+            minLength={5}
           />
           <View style={styles.buttonContainer}>
             <TouchableOpacity
@@ -65,7 +70,7 @@ const SignInScreen = (props) => {
           <View style={styles.buttonContainer}>
             <TouchableOpacity
               onPress={() => {
-                props.navigation.navigate("TaskManager");
+                signupHandler && props.navigation.navigate("TaskManager");
               }}
               style={styles.button}
             >
