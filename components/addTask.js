@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Button,
   View,
+  Text,
 } from "react-native";
 
 export default function AddTask({ submitHandler }) {
@@ -15,16 +16,17 @@ export default function AddTask({ submitHandler }) {
   };
 
   return (
-    <View>
+    <View style={styles.container}>
       <TextInput
         styles={styles.input}
-        placeholder="NewTodo"
+        placeholder="Add a New Todo"
         onChangeText={changeHandler}
+        placeholderTextColor="#ffffff"
       />
       <Button
         onPress={() => submitHandler(text)}
         title="add Task"
-        color="#7fff00"
+        color="#ffffff"
       />
     </View>
   );
@@ -35,7 +37,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 8,
     paddingVertical: 6,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ffffff",
+    borderWidth: 3,
+    borderColor: "#ffffff",
+    textAlign: "center",
+    color: "#ffffff",
   },
 });

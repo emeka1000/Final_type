@@ -32,7 +32,9 @@ const HomepageScreen = (props) => {
           onPress={() => {
             props.navigation.goBack();
           }}
+          style={styles.buttonstyle}
         />
+        <Text style={styles.orders}>Tap to remove a todo</Text>
         <View style={styles.list}>
           <FlatList
             data={todos}
@@ -51,17 +53,28 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "#2f4f4f",
   },
   content: {
     flex: 1,
     width: "100%",
-    marginTop: 40,
+    marginTop: 150,
     padding: 40,
     marginVertical: 20,
+    backgroundColor: "#2f4f4f",
+    color: "#ffffff",
   },
-
+  orders: {
+    textAlign: "center",
+    marginTop: "10%",
+    textTransform: "uppercase",
+    color: "#ffffff",
+  },
   list: {
     marginTop: 20,
+  },
+  buttonstyle: {
+    color: "#000000",
   },
 });
 

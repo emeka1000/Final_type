@@ -11,8 +11,19 @@ const LoginNavigation = createStackNavigator({
             header: () => false,
         },
     },
-    TaskManager: HomepageScreen,
-    LogIn: LoginInput,
+    TaskManager: {
+        screen: HomepageScreen,
+        navigationOptions: {
+            header: () => false,
+        },
+    },
+
+    LogIn: {
+        screen: LoginInput,
+        navigationOptions: {
+            header: () => false,
+        },
+    },
 });
 
 export default createAppContainer(LoginNavigation);

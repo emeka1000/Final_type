@@ -22,7 +22,7 @@ const LoginInput = (props) => {
     <ImageBackground source={image} resizeMode="cover" style={styles.image}>
       <KeyboardAvoidingView style={styles.containerTop} behavior="padding">
         <ScrollView style={styles.container}>
-          <Text style={styles.text}>Create an account</Text>
+          <Text style={styles.text}>Login</Text>
           <TextInput
             placeholder="Email/User ID"
             placeholderTextColor="#ffffff"
@@ -42,7 +42,7 @@ const LoginInput = (props) => {
           <View style={styles.buttonContainer}>
             <TouchableOpacity
               onPress={() => {
-                props.navigation.navigate({ routeName: "logIn" });
+                props.navigation.navigate({ routeName: "TaskManager" });
               }}
               style={styles.button}
             >
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     overflow: "visible",
-    marginTop: 50,
+    marginTop: 130,
     flex: 1,
     height: 200,
     margin: 12,
