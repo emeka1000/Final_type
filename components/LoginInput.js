@@ -45,12 +45,22 @@ const UserInput = (props) => {
           secureTextEntry
         />
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => {}} style={styles.button}>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("LogIn");
+            }}
+            style={styles.button}
+          >
             <Text sytle={[styles.buttonText, styles.buttonOutline]}>Login</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity onPress={() => {}} style={styles.button}>
+          <TouchableOpacity
+            onPress={() => {
+              props.navigation.navigate("TaskManager");
+            }}
+            style={styles.button}
+          >
             <Text sytle={[styles.buttonText, styles.buttonOutlineText]}>
               Register
             </Text>

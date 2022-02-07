@@ -8,6 +8,7 @@ import {
   ImageBackground,
 } from "react-native";
 import { TouchableOpacity, View } from "react-native";
+import { withNavigation } from "react-navigation";
 
 const image = {
   uri: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiHVbM0oG57TC2IiI3nZj866K33lJG736_jszKr964SBoF6gNBfpV8omUBKUo5a7KTG1o&usqp=CAU",
@@ -39,7 +40,12 @@ const LoginInput = (props) => {
             secureTextEntry
           />
           <View style={styles.buttonContainer}>
-            <TouchableOpacity onPress={() => {}} style={styles.button}>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate({ routeName: "logIn" });
+              }}
+              style={styles.button}
+            >
               <Text sytle={[styles.buttonText, styles.buttonOutline]}>
                 Login
               </Text>
